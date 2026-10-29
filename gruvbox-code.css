@@ -1,0 +1,149 @@
+/*
+ * Gruvbox code highlighting for Obsidian.
+ *
+ * This snippet is intentionally scoped to code. It does not change Obsidian's
+ * application chrome, typography, headings, links, tags, or note backgrounds.
+ */
+
+body {
+  --gruvbox-code-dark-bg: #282828;
+  --gruvbox-code-dark-fg: #ebdbb2;
+  --gruvbox-code-dark-muted: #928374;
+  --gruvbox-code-dark-red: #fb4934;
+  --gruvbox-code-dark-green: #b8bb26;
+  --gruvbox-code-dark-yellow: #fabd2f;
+  --gruvbox-code-dark-blue: #83a598;
+  --gruvbox-code-dark-purple: #d3869b;
+  --gruvbox-code-dark-aqua: #8ec07c;
+  --gruvbox-code-dark-orange: #fe8019;
+
+  --gruvbox-code-light-bg: #fbf1c7;
+  --gruvbox-code-light-fg: #3c3836;
+  --gruvbox-code-light-muted: #928374;
+  --gruvbox-code-light-red: #9d0006;
+  --gruvbox-code-light-green: #79740e;
+  --gruvbox-code-light-yellow: #b57614;
+  --gruvbox-code-light-blue: #076678;
+  --gruvbox-code-light-purple: #8f3f71;
+  --gruvbox-code-light-aqua: #427b58;
+  --gruvbox-code-light-orange: #af3a03;
+}
+
+.theme-dark {
+  --gruvbox-code-bg: var(--gruvbox-code-dark-bg);
+  --gruvbox-code-fg: var(--gruvbox-code-dark-fg);
+  --gruvbox-code-muted: var(--gruvbox-code-dark-muted);
+  --gruvbox-code-red: var(--gruvbox-code-dark-red);
+  --gruvbox-code-green: var(--gruvbox-code-dark-green);
+  --gruvbox-code-yellow: var(--gruvbox-code-dark-yellow);
+  --gruvbox-code-blue: var(--gruvbox-code-dark-blue);
+  --gruvbox-code-purple: var(--gruvbox-code-dark-purple);
+  --gruvbox-code-aqua: var(--gruvbox-code-dark-aqua);
+  --gruvbox-code-orange: var(--gruvbox-code-dark-orange);
+}
+
+.theme-light {
+  --gruvbox-code-bg: var(--gruvbox-code-light-bg);
+  --gruvbox-code-fg: var(--gruvbox-code-light-fg);
+  --gruvbox-code-muted: var(--gruvbox-code-light-muted);
+  --gruvbox-code-red: var(--gruvbox-code-light-red);
+  --gruvbox-code-green: var(--gruvbox-code-light-green);
+  --gruvbox-code-yellow: var(--gruvbox-code-light-yellow);
+  --gruvbox-code-blue: var(--gruvbox-code-light-blue);
+  --gruvbox-code-purple: var(--gruvbox-code-light-purple);
+  --gruvbox-code-aqua: var(--gruvbox-code-light-aqua);
+  --gruvbox-code-orange: var(--gruvbox-code-light-orange);
+}
+
+/* Code surfaces only. */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-rendered pre,
+.markdown-rendered :not(pre) > code {
+  background-color: var(--gruvbox-code-bg);
+  color: var(--gruvbox-code-fg);
+}
+
+.markdown-rendered :not(pre) > code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  color: var(--gruvbox-code-aqua);
+}
+
+/* CodeMirror 6 tokens used by Obsidian's editor. */
+.markdown-source-view.mod-cm6 .tok-comment {
+  color: var(--gruvbox-code-muted);
+  font-style: italic;
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-keyword, .tok-modifier, .tok-operatorKeyword) {
+  color: var(--gruvbox-code-red);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-string, .tok-regexp, .tok-escape) {
+  color: var(--gruvbox-code-green);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-number, .tok-bool, .tok-null, .tok-atom) {
+  color: var(--gruvbox-code-purple);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-typeName, .tok-className, .tok-namespace) {
+  color: var(--gruvbox-code-yellow);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-variableName, .tok-definition, .tok-labelName) {
+  color: var(--gruvbox-code-blue);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-propertyName, .tok-attributeName) {
+  color: var(--gruvbox-code-aqua);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-operator, .tok-punctuation, .tok-separator, .tok-bracket) {
+  color: var(--gruvbox-code-fg);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-tagName, .tok-invalid) {
+  color: var(--gruvbox-code-red);
+}
+
+.markdown-source-view.mod-cm6 :is(.tok-meta, .tok-processingInstruction) {
+  color: var(--gruvbox-code-orange);
+}
+
+/* Prism tokens used by rendered fenced code blocks. */
+.markdown-rendered pre code :is(.token.comment, .token.prolog, .token.doctype, .token.cdata) {
+  color: var(--gruvbox-code-muted);
+  font-style: italic;
+}
+
+.markdown-rendered pre code :is(.token.punctuation, .token.operator) {
+  color: var(--gruvbox-code-fg);
+}
+
+.markdown-rendered pre code :is(.token.property, .token.tag, .token.constant, .token.symbol, .token.deleted) {
+  color: var(--gruvbox-code-red);
+}
+
+.markdown-rendered pre code :is(.token.boolean, .token.number) {
+  color: var(--gruvbox-code-purple);
+}
+
+.markdown-rendered pre code :is(.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted) {
+  color: var(--gruvbox-code-green);
+}
+
+.markdown-rendered pre code :is(.token.atrule, .token.attr-value, .token.keyword) {
+  color: var(--gruvbox-code-red);
+}
+
+.markdown-rendered pre code :is(.token.function, .token.class-name) {
+  color: var(--gruvbox-code-yellow);
+}
+
+.markdown-rendered pre code :is(.token.regex, .token.important, .token.variable, .token.entity, .token.url) {
+  color: var(--gruvbox-code-orange);
+}
+
+.markdown-rendered pre code .token.namespace {
+  color: var(--gruvbox-code-blue);
+}
